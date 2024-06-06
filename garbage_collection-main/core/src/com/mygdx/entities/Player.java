@@ -39,7 +39,7 @@ public class Player extends Actor {
     @Override
     public void draw(Batch batch, float parentAlpha) {
         super.draw(batch, parentAlpha);
-        batch.draw(playerAnimationManager.getCurrentFrame(), getX(), getY());
+        batch.draw(playerAnimationManager.getCurrentFrame(), getX()+8, getY()+8);
     }
 
     @Override

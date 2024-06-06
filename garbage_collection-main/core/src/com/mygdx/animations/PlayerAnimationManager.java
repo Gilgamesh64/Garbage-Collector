@@ -78,18 +78,18 @@ public class PlayerAnimationManager {
     }
 
     /**
-     * @param direction 0: idleDown, 1:idleRight, 2: idleLeft, 3: idleUp, 4: walkDown, 5: walkUp, 6: walkLeft, 7: walkRight
+     * @param direction iS: idleDown, iD:idleRight, iA: idleLeft, iW: idleUp, wS: walkDown, wW: walkUp, wA: walkLeft, wD: walkRight
      * */
-    public void setCurrentAnimation(int direction){
+    public void setCurrentAnimation(String direction){
         switch (direction) {
-            case 0 -> currentAnimation = idleDown;
-            case 1 -> currentAnimation = idleRight;
-            case 2 -> currentAnimation = idleLeft;
-            case 3 -> currentAnimation = idleUp;
-            case 4 -> currentAnimation = walkDownAnimation;
-            case 5 -> currentAnimation = walkUpAnimation;
-            case 6 -> currentAnimation = walkLeftAnimation;
-            case 7 -> currentAnimation = walkRightAnimation;
+            case "iS" -> currentAnimation = idleDown;
+            case "iD" -> currentAnimation = idleRight;
+            case "iA" -> currentAnimation = idleLeft;
+            case "iW" -> currentAnimation = idleUp;
+            case "wS" -> currentAnimation = walkDownAnimation;
+            case "wW" -> currentAnimation = walkUpAnimation;
+            case "wA" -> currentAnimation = walkLeftAnimation;
+            case "wD" -> currentAnimation = walkRightAnimation;
         }
     }
 }

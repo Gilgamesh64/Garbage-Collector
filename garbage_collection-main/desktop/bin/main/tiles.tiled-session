@@ -1,0 +1,38 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "tiles.tmx",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "fileStates": {
+        "tiles.tmx": {
+            "scale": 0.7659374999999999,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 320.5222358221135,
+                "y": 320.5222358221135
+            }
+        },
+        "tileset.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        }
+    },
+    "last.imagePath": "C:/Users/chto2/Downloads",
+    "map.lastUsedFormat": "tmx",
+    "map.layerDataFormat": null,
+    "map.width": 20,
+    "openFiles": [
+        "tiles.tmx",
+        "tileset.tsx"
+    ],
+    "project": "tiles.tiled-project",
+    "recentFiles": [
+        "tileset.tsx",
+        "tiles.tmx"
+    ],
+    "tileset.lastUsedFormat": "tsx"
+}

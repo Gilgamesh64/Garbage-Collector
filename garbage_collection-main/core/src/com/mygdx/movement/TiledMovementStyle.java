@@ -14,32 +14,33 @@ public class TiledMovementStyle extends MovementStyle {
     private boolean inputted = false;
     private long lastMove, firstInput;
     private final Actor player;
+    private String lastDirection; 
 
     public TiledMovementStyle(Actor player) {
         inputs = new HashSet<>();
         lastMove = 0;
         firstInput = 0;
         this.player = player;
+        lastDirection = "-";
     }
-
-    public int move() {
+    public String move() {
         long sinceLastMove = (Gdx.graphics.getFrameId() - lastMove);
 
-        if (sinceLastMove < 5) return -1;
+        if (sinceLastMove < 5) return "";
 
         if (Gdx.input.isKeyPressed(Input.Keys.W)) inputs.add('W');
         if (Gdx.input.isKeyPressed(Input.Keys.S)) inputs.add('S');
         if (Gdx.input.isKeyPressed(Input.Keys.A)) inputs.add('A');
         if (Gdx.input.isKeyPressed(Input.Keys.D)) inputs.add('D');
 
-        if (sinceLastMove < 9) return -1;
+        if (sinceLastMove < 9) return "";
 
-        if (inputs.isEmpty()) return -1;
+        if (inputs.isEmpty()) return lastDirection;
 
         if (!inputted) {
             inputted = true;
             firstInput = Gdx.graphics.getFrameId();
-            return -1;
+            return "";
         }
 
         long sinceFirstInput = (Gdx.graphics.getFrameId() - firstInput);
@@ -49,10 +50,10 @@ public class TiledMovementStyle extends MovementStyle {
 
             for (Character c : inputs) {
                 switch (c) {
-                    case 'W' -> y += 50;
-                    case 'A' -> x -= 50;
-                    case 'S' -> y -= 50;
-                    case 'D' -> x += 50;
+                    case 'W' -> y += 32;
+                    case 'A' -> x -= 32;
+                    case 'S' -> y -= 32;
+                    case 'D' -> x += 32;
                 }
             }
 
@@ -63,13 +64,14 @@ public class TiledMovementStyle extends MovementStyle {
             mba.setAmount(x, y);
             mba.setDuration(0.1f);
             player.addAction(mba);
-            int dir = -1;
-            if (y == 50) dir = 1;
-            else if (y == -50) dir = 0;
-            if (x == 50) dir = 3;
-            else if (x == -50) dir = 2;
+            String dir = "-";
+            if (y == 32) dir = "wW";
+            else if (y == -32) dir = "wS";
+            if (x == 32) dir = "wD";
+            else if (x == -32) dir = "wA";
+            lastDirection = "i" + dir.substring(1);
             return dir;
         }
-        return -1;
+        return "";
     }
 }

@@ -34,7 +34,7 @@ public class MainScreen extends ScreenAdapter {
         tileSetManager = new TileSetManager();
 
         Player player = new Player(160, 160);
-        player.setMovementStyle(Player.Styles.REALTIME);
+        player.setMovementStyle(Player.Styles.TILED);
         stage.addActor(player);
         stage.setKeyboardFocus(player);
     }
